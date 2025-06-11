@@ -8,15 +8,16 @@ spec:
   source:
     repoURL: https://github.com/samb1232/DV_lab4_chart.git
     targetRevision: HEAD
-    path: templates
+    path: .
+    helm:    # ✅ Явное указание Helm
+      valueFiles:
+      - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
-
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-
     automated:
       selfHeal: true
       prune: true

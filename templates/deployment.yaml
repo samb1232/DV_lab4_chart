@@ -19,4 +19,4 @@ spec:
             - containerPort: {{ .Values.app.service.port }}
           env:
             - name: REDIS_HOST
-              value: "redis-service"
+              value: "{{ .Release.Name }}-redis-service"
