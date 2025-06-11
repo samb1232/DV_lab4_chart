@@ -1,5 +1,5 @@
 app:
-  replicaCount: 1
+  replicaCount: 3
   image:
     repository: samb1232/flask-counter
     tag: latest
