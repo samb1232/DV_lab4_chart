@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-counter
+spec:
+  replicas: {{ .Values.app.replicaCount }}
+  selector:
+    matchLabels:
+      app: flask-counter
+  template:
+    metadata:
+      labels:
+        app: flask-counter
+    spec:
+      containers:
+        - name: web
+          image: "{{ .Values.app.image.repository }}:{{ .Values.app.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.app.service.port }}
+          env:
+            - name: REDIS_HOST
+              value: "redis-service"

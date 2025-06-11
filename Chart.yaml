@@ -1,0 +1,5 @@
+apiVersion: v2
+name: flask-counter
+description: A simple Flask counter application with Redis
+version: 0.1.0
+appVersion: "1.0"

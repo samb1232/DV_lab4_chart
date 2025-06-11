@@ -1,0 +1,12 @@
+app:
+  replicaCount: 1
+  image:
+    repository: samb1232/flask-counter
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+    port: 5000
+
+redis:
+  enabled: true
